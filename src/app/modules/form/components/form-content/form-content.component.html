@@ -1,0 +1,48 @@
+<!--Contenedor visual (PrimeNG) 
+Usa PrimeNG Card para dar un diseño limpio y profesional, encerrando todo el formulario-->
+<p-card header="Registro del Blog">
+
+<!--Conecta el formulario HTML con el FormGroup de Angular permitiendo validaciones
+ y control del estado del formulario-->
+  <form [formGroup]="form" class="form">
+
+<!--pInputText → estilo de PrimeNG
+formControlName → vincula el campo con el modelo del formulario
+Se repite para todos los casos-->
+    <label>Nombres</label>
+    <input pInputText formControlName="nombres" />
+
+    <label>Apellidos</label>
+    <input pInputText formControlName="apellidos" />
+
+    <label>Correo</label>
+    <input pInputText formControlName="correo" />
+
+    <label>Teléfono</label>
+    <input pInputText formControlName="telefono" />
+
+<!--Asegura que el usuario ingrese solo números-->
+    <label>Edad</label>
+    <input pInputText type="number" formControlName="edad" />
+
+<!--Ejecuta la función guardar, se desactiva si el formulario es inválido
+y usamos íconos de PrimeIcons para una mejor experiencia de usuario -->
+    <div class="buttons">
+      <p-button
+        label="Guardar"
+        icon="pi pi-save"
+        (onClick)="guardar()"
+        [disabled]="form.invalid">
+      </p-button>
+
+<!--Cancela la acción y redirige al Home sin guardar datos-->
+      <p-button
+        label="Cancelar"
+        severity="secondary"
+        icon="pi pi-times"
+        (onClick)="cancelar()">
+      </p-button>
+    </div>
+
+  </form>
+</p-card>

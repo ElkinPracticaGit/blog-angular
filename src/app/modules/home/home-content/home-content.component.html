@@ -1,0 +1,85 @@
+
+<!-- HOME: Muestra los registros -->
+<!-- NAVBAR 
+✔ Logo
+✔ Botón Inicio
+✔ Botón Nuevo Registro 
+-->
+<nav class="navbar">
+  <div class="nav-left">
+    <img src="https://clipground.com/images/utm-logo-6.png" alt="Logo" class="logo">
+    <span class="brand">Blog Personal UTM</span>
+  </div>
+
+  <div class="nav-right">
+    <p-button
+      label="Inicio"
+      icon="pi pi-home"
+      severity="secondary"
+      (onClick)="goToHome()">
+    </p-button>
+
+    <p-button
+      label="Nuevo Registro"
+      icon="pi pi-user-plus"
+      severity="primary"
+      (onClick)="goToForm()">
+    </p-button>
+  </div>
+</nav>
+
+<!-- CONTENIDO PRINCIPAL -->
+<main class="content">
+
+  <h1>Registro de Usuarios</h1>
+  <p class="subtitle">
+    Lista de registros creados mediante formulario y almacenados en LocalStorage.
+  </p>
+
+  <!-- Mensaje vacío -->
+  <p-card *ngIf="posts.length === 0" class="empty-card">
+    <p>No hay registros guardados.</p>
+  </p-card>
+
+  <!-- Tarjetas: Mostrar registros y recorre los registros del LocalStorage-->
+  <section class="cards">
+    <p-card *ngFor="let post of posts" class="user-card">
+
+      <ng-template pTemplate="header">
+        <h3>{{ post.nombres }} {{ post.apellidos }}</h3>
+      </ng-template>
+
+      <ng-template pTemplate="subtitle">
+        {{ post.correo }}
+      </ng-template>
+
+      <p><strong>Edad:</strong> {{ post.edad }} años</p>
+
+      <ng-template pTemplate="footer">
+      <!--Botón CRUD: Editar-->
+        <p-button
+          label="Editar"
+          icon="pi pi-pencil"
+          severity="warning"
+          (onClick)="editPost(post.id)">
+        </p-button>
+      <!--Botón CRUD: Eliminar-->
+        <p-button
+          label="Eliminar"
+          icon="pi pi-trash"
+          severity="danger"
+          (onClick)="deletePost(post.id)">
+        </p-button>
+      </ng-template>
+
+    </p-card>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>
+    Blog creado por: <strong>Elkin Moreira</strong> y <strong>Harold Zambrano</strong>
+  </p>
+</footer>

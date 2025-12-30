@@ -1,0 +1,126 @@
+/* Función: estilo visual
+
+Tonalidades verdes, amarillas y blancas
+
+Grid responsive
+
+Navbar y footer personalizados */
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #228B22;
+  border-bottom: 3px solid #cddc39;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.brand {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.nav-right p-button {
+  margin-left: 10px;
+}
+
+/* ===== CONTENIDO PRINCIPAL ===== */
+.content {
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px;
+  background-color: #ffffff;
+}
+
+.content h1 {
+  color: #2e7d32;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #827717;
+  margin-bottom: 25px;
+}
+
+/* ===== TARJETAS ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.user-card {
+  background-color: #fffde7;
+}
+
+/* ===== ACCIONES ===== */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* ===== MENSAJE VACÍO ===== */
+.empty-card {
+  background-color: #fffde7;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  margin-top: 40px;
+  padding: 15px;
+  text-align: center;
+  background-color: #228B22;
+  border-top: 3px solid #cddc39;
+  color: #000;
+}
+
+/* ===== ESTILOS ANTIGUOS (SE CONSERVAN) ===== */
+.blog-container {
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+.blog-header {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  h1 {
+    color: #2e7d32;
+  }
+
+  p {
+    color: #6d6d6d;
+    margin-bottom: 1rem;
+  }
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.post {
+  border-top: 4px solid #8bc34a;
+}
+
+.empty {
+  text-align: center;
+  background-color: #f9fbe7;
+}
